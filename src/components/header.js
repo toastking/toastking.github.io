@@ -9,12 +9,16 @@ const HeaderContainer = styled.div`
   flex-direction: row;
   min-height:5vh;
   width:100vw;
-  background:rgb(24, 24, 24);
+  background:rgba(24, 24, 24,.5);
   color:white;
   font-weight:bold;
 
   a {
     text-decoration:none;
+    color:white;
+  }
+
+  a:visited {
     color:white;
   }
 

@@ -3,8 +3,10 @@ import 'typeface-roboto';
 import 'typeface-roboto-mono';
 
 const typography = new Typography({
-  baseFontSize: "18px",
+  baseFontSize: "12px",
   baseLineHeight:"1.2",
+  headerColor:'white',
+  bodyColor:'white',
   headerFontFamily: ["Roboto Mono", "sans-serif"],
   bodyFontFamily: ["Roboto", "sans-serif"],
 });

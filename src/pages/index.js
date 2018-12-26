@@ -9,11 +9,11 @@ import styled from 'styled-components';
 
 // Container for each post excerpt
 const PostCard = styled.div`
-  border: 1px solid #cccccc;
-  box-shadow: 5px 5px 5px #cccccc;
+  border-bottom: 1px dashed #eeeeee;
   padding:2em;
   margin:1em;
-  width:30em;
+  display:flex;
+  flex-direction:column;
 
   a {
     text-decoration:none;
@@ -27,11 +27,14 @@ const PostCard = styled.div`
 
 const CardContainer = styled.div`
   display:flex;
-  flex-flow:row;
+  flex-direction:column;
 `; 
 
 const DateText = styled.div`
   font-weight:light;
+  font-size:0.75em;
+  margin-top:auto;
+  margin-bottom:0;
 `;
 
 const FrontPagePost = (props)=>{
@@ -40,6 +43,7 @@ const FrontPagePost = (props)=>{
     <PostCard>
       <Link to={node.fields.slug}><h3> {node.frontmatter.title} </h3></Link>
       <p>{node.excerpt}</p>
+      <DateText>{node.frontmatter.date}</DateText>
     </PostCard>
   );
 }
@@ -64,7 +68,7 @@ const IndexPage = ({data}) => (
           id
           frontmatter {
             title
-            date(formatString: "DD MMMM, YYYY")
+            date(formatString: "MMMM DD, YYYY")
           }
           fields{
             slug

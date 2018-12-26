@@ -11,6 +11,8 @@ const Container = styled.div`
   width:100vw;
   display:flex;
   flex-direction:column;
+  background:#4a525a;
+  color:white;
 `;
 
 const Content = styled.div`
