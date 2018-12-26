@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Matt Del Signore`,
+    description: `Personal website of software developer Matt Del Signore`,
+    author: `@delsig`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -23,6 +23,13 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-remark`,
+    `gatsby-plugin-styled-components`,
+    {
+      resolve:`gatsby-plugin-typography`,
+      options:{
+        pathToConfigModule:`src/utils/typography`
+      }
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

@@ -8,7 +8,7 @@ import SEO from '../components/seo'
 function FrontPagePost(props){
   var node = props.item;
   return(
-    <div>
+    <div className="mattdelsig-postcard">
       <Link to={node.fields.slug}>
       <h3>
         {node.frontmatter.title}{" "}

@@ -1,35 +1,59 @@
 import { Link } from 'gatsby'
-import PropTypes from 'prop-types'
-import React from 'react'
+import PropTypes from 'prop-types';
+import React from 'react';
+import styled from "styled-components";
+
+//make divs to style stuff
+const HeaderContainer = styled.div`
+  display:flex;
+  flex-direction: row;
+  min-height:5vh;
+  width:100vw;
+  background:rgb(24, 24, 24);
+  color:white;
+  font-weight:bold;
+
+  a {
+    text-decoration:none;
+    color:white;
+  }
+
+  a:hover {
+    color:#cccccc;
+  }
+`;
+
+const Logo = styled.div`
+  margin-right:auto;
+  margin-left:1em;
+`;
+
+const Menu = styled.div`
+  margin-right:1em;
+  margin-left:auto;
+  color:white;
+`;
+
+const MenuText = styled.p`
+  margin-top:auto;
+  margin-bottom:auto;
+`;
+
+const MenuItem = (props)=>(
+  <MenuText><Link to={props.url}> {props.text} </Link></MenuText>
+);
 
 const Header = ({ siteTitle }) => (
-  <div
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </div>
-)
+  <HeaderContainer>
+    <Logo>
+      <MenuItem url="/" text={siteTitle}/>
+    </Logo>
+
+    <Menu>
+      <MenuItem url="/about" text="About"/>
+    </Menu>
+  </HeaderContainer>
+);
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
