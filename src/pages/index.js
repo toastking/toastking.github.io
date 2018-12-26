@@ -1,33 +1,57 @@
-import React from 'react'
-import { Link,graphql } from 'gatsby'
+import React from 'react';
+import { Link,graphql } from 'gatsby';
 
-import Layout from '../components/layout'
-import Image from '../components/image'
-import SEO from '../components/seo'
+import Layout from '../components/layout';
+import Image from '../components/image';
+import SEO from '../components/seo';
 
-function FrontPagePost(props){
-  var node = props.item;
+import styled from 'styled-components';
+
+// Container for each post excerpt
+const PostCard = styled.div`
+  border: 1px solid #cccccc;
+  box-shadow: 5px 5px 5px #cccccc;
+  padding:2em;
+  margin:1em;
+  width:30em;
+
+  a {
+    text-decoration:none;
+    color:black;
+  }
+
+  a:hover{
+    color:#cccccc;
+  }
+`;
+
+const CardContainer = styled.div`
+  display:flex;
+  flex-flow:row;
+`; 
+
+const DateText = styled.div`
+  font-weight:light;
+`;
+
+const FrontPagePost = (props)=>{
+  let node = props.item;
   return(
-    <div className="mattdelsig-postcard">
-      <Link to={node.fields.slug}>
-      <h3>
-        {node.frontmatter.title}{" "}
-        <span>
-          — {node.frontmatter.date}
-        </span>
-      </h3>
-      </Link>
+    <PostCard>
+      <Link to={node.fields.slug}><h3> {node.frontmatter.title} </h3></Link>
       <p>{node.excerpt}</p>
-    </div>
+    </PostCard>
   );
 }
 
 const IndexPage = ({data}) => (
   <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    {data.allMarkdownRemark.edges.map(({node})=>(
-      <FrontPagePost item={node} key={node.id}/>
-    ))}
+    <SEO title="Matthew Del Signore" keywords={[`coder`, `portfolio`, `frontend`, `react`, `gatsby`]} />
+    <CardContainer>
+      {data.allMarkdownRemark.edges.map(({node})=>(
+        <FrontPagePost item={node} key={node.id}/>
+      ))}
+    </CardContainer>
   </Layout>
 )
 

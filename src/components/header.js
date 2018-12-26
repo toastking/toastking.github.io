@@ -24,11 +24,15 @@ const HeaderContainer = styled.div`
 `;
 
 const Logo = styled.div`
+  display:flex;
+  align-items:center;
   margin-right:auto;
   margin-left:1em;
 `;
 
 const Menu = styled.div`
+  display:flex;
+  align-items:center;
   margin-right:1em;
   margin-left:auto;
   color:white;
