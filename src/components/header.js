@@ -57,8 +57,7 @@ const Menu = styled.div`
 `;
 
 const MenuText = styled.p`
-  margin-top:auto;
-  margin-bottom:auto;
+  margin: auto .25em auto .25em;
 `;
 
 const MenuItem = (props)=>(
@@ -73,6 +72,8 @@ const Header = ({ siteTitle }) => (
 
     <Menu>
       <MenuItem url="/about" text="About"/>
+      <MenuItem url="/projects/projects" text="Projects"/>
+      <MenuItem url="/Matthew-Del-Signore-Resume.pdf" text="Resume"/>
     </Menu>
   </HeaderContainer>
 );
