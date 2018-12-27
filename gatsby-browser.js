@@ -5,3 +5,10 @@
  */
 
 // You can delete this file if you're not using it
+
+//import prims code highlighting theme
+require("prismjs/themes/prism-tomorrow.css");
+
+//import webfonts css
+require('typeface-roboto');
+require('typeface-roboto-mono');

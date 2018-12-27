@@ -29,7 +29,7 @@ To start we're going to make a new folder.  You can call it "turkey" or somethin
 
 Here's what the turkey.html should look like after you make the canvas element and link the main.js javascript file.
 
-{% highlight html %}
+```html{numberLines: true}
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,19 +41,18 @@ Here's what the turkey.html should look like after you make the canvas element a
 Thanksgiving turkey goes here.
 </canvas>
 </body>
-{% endhighlight %}
-
+```
 Now we turn our attention to main.js.  Before we can do anything with the canvas we need to import it into the javascript by using an id property.  We'll change the canvas element to include an id:
 
-{% highlight html %}
+```html{numberLines: true}
 <canvas id = "turkey" width = "500" height = "500">
 Thanksgiving turkey goes here.
 </canvas>
-{% endhighlight %}
+```
 
 We can then use this id to select the element in the Javascript code.  First we'll make a new function that we'll do our drawing in.  Inside this function we'll use *document.getElementById()* to select the canvas element. When we select the canvas we also need to get it's *graphics context*.  This is the object that allows us to draw shapes and other fun stuff on the canvas.  In order to call the function when the web page loads we'll add it to the body tag's onload property.  
 
-{% highlight javascript %}
+```javascript{numberLines: true}
 function draw(){
 	//first we use the id property of the canvas element to get it
 	canvas = document.getElementById("turkey");
@@ -63,15 +62,15 @@ function draw(){
 		var ctx = canvas.getContext("2d");
 	}
 }
-{% endhighlight %}
+````
 
-{% highlight html %}
+```html{numberLines: true}
 <body onload="draw()">
 <canvas id = "turkey" width = "500" height = "500">
 Thanksgiving turkey goes here.
 </canvas>
 </body>
-{% endhighlight %}
+```
 
 Now that we have our canvas imported and got it's graphics context we can start the fun part, drawing stuff!
 
@@ -85,13 +84,14 @@ Turkeys are large, bulbous birds.  Their shape is almost, spherical.  In our hig
 
 Before we can draw the circle we need to set the fillStyle of the graphics context.  This variable allows us to the change the color of the insides of the shapes we draw.
 
-{% highlight js %}
+
+```javascript
 ctx.fillStyle = "rgb(127,108,56)";
-{% endhighlight %}
+```
 
 Now we'll draw the circle.  To do that we'll use the [arc() function](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/arc).  After all, a circle is just a 360 degree angle arc right?  The function takes the angle in radians though, so we'll need to remember our high scshool algebra.  360 degrees is 2 PI in radians.  We'll draw our circle near the midde, setting it's center point at 100 x and 200 y.  We'll make the radius of the circle 50 so our turkey is nice and plump.  After we call arc() we need to call **fill()** to fill in the circle we drew with the color we specified in fillStyle earlier.  Here's what the code looks like:
 
-{% highlight js %}
+```javascript{numberLines: true}
 	//once we set up our canvas and graphics context object we can start drawing!
 	//first we'll draw the body of the turkey
 	ctx.fillStyle = "rgb(127,108,56)";
@@ -106,7 +106,7 @@ Now we'll draw the circle.  To do that we'll use the [arc() function](https://de
 	ctx.arc(x, y, radius, startAngle, endAngle, anticlockwise);
 
 	ctx.fill();
-{% endhighlight %}
+```
 
 And voila! We have a nice turkey body (almost as good as dad bod).
 
@@ -124,7 +124,7 @@ So how can we combine arcs and lines to make something that looks like a feather
 
 Our code looks something like this:
 
-{% highlight javascript %}
+```javascript{numberLines: true}
 	//now lets draw a feather!
 	//set the color to fill the feature
 	ctx.fillStyle = "#B2130D";
@@ -134,7 +134,7 @@ Our code looks something like this:
 	ctx.arc(50, 80, 10, 0, Math.PI, true);
 	ctx.lineTo(80,180);
 	ctx.fill();
-{% endhighlight %}
+```
 
 So now we've drawn one feather.  But a turkey with one feather is one sad turkey!  Let's make some more! But since we're programmers, we like elegant solutions, so let's make a loop to make the other feathers.  
 
@@ -148,9 +148,7 @@ Ok, so we have our colors for our feathers, we have the code to make our feather
 
 ![turkey with feathers](feathers.png)
 
-
-{% highlight js %}
-
+```javascript{numberLines: true}
 	//we're gonna save the canvas state since we're moving it around
 	ctx.save();
 	//now let's draw the next four using a loop
@@ -169,8 +167,8 @@ Ok, so we have our colors for our feathers, we have the code to make our feather
 
 	//restore the canvas state after all those wacky transformations
 	ctx.restore();
+```
 	
-{% endhighlight %}
 
 ## Drawing the Neck ##
 
@@ -186,7 +184,8 @@ Here's the cool math and the code we used to make the neck (*warning: it uses lo
 
 ![the cool math we use to make the neck](math.png)
 
-{% highlight js %}
+
+```javascript{numberLines: true}
 //now let's draw the turkey's neck and eyes!
 	//we're going to use two lines and arc
 	//the arc is a Bezier curve
@@ -219,8 +218,7 @@ Here's the cool math and the code we used to make the neck (*warning: it uses lo
 	ctx.lineTo(19,124);
 	ctx.arc(22,124,2.5, Math.PI, Math.PI*2, true);
 	ctx.fill();
-	
-{% endhighlight %}
+```	
 
 ## The Beak ##
 
@@ -228,7 +226,7 @@ The beak is a very important part of the turkey.  It allows it to utter it's bea
 
 ![turkey with a beak](eyes.png)
 
-{% highlight js %}
+```javascript{numberLines: true}
 //let's draw the beak!
 	ctx.fillStyle = "#FFDE00";
 	ctx.beginPath();
@@ -236,17 +234,18 @@ The beak is a very important part of the turkey.  It allows it to utter it's bea
 	ctx.lineTo(10,118);
 	ctx.lineTo(25,118);
 	ctx.fill(); 
-{% endhighlight %}
+```
+
 ## Look, Look with Your Special Eyes!
 There is just one last thing we need to add to make our turkey complete.  Eyes!  This should be easy by now, it's just a circle in the middle of it's head!  
 
-{% highlight js %}
+```javascript{numberLines: true}
 	//to finish it off let's draw the eyes!
 	ctx.fillStyle = "#000000";
 	ctx.beginPath();
 	ctx.arc(29,107,2,0,Math.PI*2,false);
 	ctx.fill();
-{% endhighlight %}
+```
 
 **And with that we are finished! It's it beautiful?**
 

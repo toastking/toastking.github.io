@@ -9,7 +9,7 @@ import styled from 'styled-components';
 
 // Container for each post excerpt
 const PostCard = styled.div`
-  border-bottom: 1px dashed #eeeeee;
+  border-bottom: .05em solid #eeeeee;
   padding:2em;
   margin:1em;
   margin-top:0;
@@ -30,17 +30,19 @@ const PostCard = styled.div`
 const CardContainer = styled.div`
   display:flex;
   flex-direction:column;
+  margin-right:15vw;
+  margin-left:15vw;
 `; 
 
 const DateText = styled.div`
-  font-weight:light;
+  font-weight:lighter;
   font-size:0.75em;
   margin-top:auto;
   margin-bottom:0;
 `;
 
 const ReadMore = styled.p`
-  font-weight:light;
+  font-weight:300;
 `;
 
 const FrontPagePost = (props)=>{

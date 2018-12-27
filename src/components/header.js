@@ -10,7 +10,11 @@ const HeaderContainer = styled.div`
   width:100vw;
   background:rgba(24, 24, 24);
   color:white;
+
+  /* Override the font */
   font-weight:bold;
+  font-family: 'Roboto Mono', 'sans-serif';
+
 
   /* Make it above all the other content
   and make it partially transparent */

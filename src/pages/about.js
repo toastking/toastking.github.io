@@ -23,6 +23,7 @@ const BioCol = styled.div`
 `;
 const AboutPage = () => (
   <Layout>
+    <SEO title="Matthew Del Signore" keywords={[`coder`, `portfolio`, `frontend`, `react`, `gatsby`,`about`]} />
     <AboutContainer>
       <AvatarCol><Avatar/></AvatarCol>
       <BioCol>
