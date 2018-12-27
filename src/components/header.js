@@ -7,11 +7,17 @@ import styled from "styled-components";
 const HeaderContainer = styled.div`
   display:flex;
   flex-direction: row;
-  min-height:5vh;
   width:100vw;
-  background:rgba(24, 24, 24,.5);
+  background:rgba(24, 24, 24);
   color:white;
   font-weight:bold;
+
+  /* Make it above all the other content
+  and make it partially transparent */
+  height:4em;
+  position:absolute;
+  opacity:0.8;
+  z-index: 999;
 
   a {
     text-decoration:none;
@@ -31,7 +37,9 @@ const Logo = styled.div`
   display:flex;
   align-items:center;
   margin-right:auto;
-  margin-left:1em;
+  margin-left:.5em;
+  font-size:2em;
+  opacity:1;
 `;
 
 const Menu = styled.div`
@@ -40,6 +48,8 @@ const Menu = styled.div`
   margin-right:1em;
   margin-left:auto;
   color:white;
+  font-size:1.25em;
+  opacity:1;
 `;
 
 const MenuText = styled.p`

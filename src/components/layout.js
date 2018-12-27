@@ -19,6 +19,8 @@ const Content = styled.div`
   flex:1 1 auto;
   overflow-y:auto;
   padding:1em;
+  /* padding to take the header into account */
+  padding-top:4em;
 
   a, a:visited {
     color:white;

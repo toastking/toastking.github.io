@@ -12,12 +12,14 @@ const PostCard = styled.div`
   border-bottom: 1px dashed #eeeeee;
   padding:2em;
   margin:1em;
+  margin-top:0;
   display:flex;
   flex-direction:column;
+  box-sizing:border-box;
 
   a {
     text-decoration:none;
-    color:black;
+    color:white;
   }
 
   a:hover{
@@ -37,12 +39,17 @@ const DateText = styled.div`
   margin-bottom:0;
 `;
 
+const ReadMore = styled.p`
+  font-weight:light;
+`;
+
 const FrontPagePost = (props)=>{
   let node = props.item;
   return(
     <PostCard>
       <Link to={node.fields.slug}><h3> {node.frontmatter.title} </h3></Link>
-      <p>{node.excerpt}</p>
+      <p> {node.excerpt} </p> 
+      <Link to={node.fields.slug}><ReadMore>Read More...</ReadMore></Link>
       <DateText>{node.frontmatter.date}</DateText>
     </PostCard>
   );
@@ -61,7 +68,10 @@ const IndexPage = ({data}) => (
 
  export const query = graphql`
   query {
-    allMarkdownRemark {
+    allMarkdownRemark (
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: 50
+      ){
       totalCount
       edges {
         node {
@@ -73,7 +83,7 @@ const IndexPage = ({data}) => (
           fields{
             slug
           }
-          excerpt
+          excerpt(pruneLength: 600)
         }
       }
     }

@@ -20,13 +20,6 @@ module.exports = {
         path: `${__dirname}/posts`,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `src`,
-        path: `${__dirname}/src/`, 
-      },
-    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     // handle markdown to html conversion
@@ -39,8 +32,10 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 590,
+              linkImagesToOriginal:false
             },
-          }
+          },
+          `gatsby-remark-prismjs`,
         ]
       }
     },
