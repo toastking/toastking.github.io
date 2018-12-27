@@ -13,11 +13,20 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    //get markdown files for blog posts
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `posts`,
         path: `${__dirname}/posts`,
+      },
+    },
+    // get markdown files in pages
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages`,
+        path: `${__dirname}/src/pages`,
       },
     },
     `gatsby-transformer-sharp`,

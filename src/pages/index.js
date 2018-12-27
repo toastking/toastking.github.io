@@ -85,8 +85,14 @@ const IndexPage = ({data}) => (
  export const query = graphql`
   query {
     allMarkdownRemark (
-      sort: { fields: [frontmatter___date], order: DESC }
-      limit: 50
+      sort: { fields: [frontmatter___date], order: DESC },
+      limit: 50,
+      # only get the posts, not the markdown pages
+      filter:{
+          frontmatter:{
+            layout:{ eq:"post" }
+          }
+        }
       ){
       totalCount
       edges {
