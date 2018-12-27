@@ -11,7 +11,7 @@ const Container = styled.div`
   width:100vw;
   display:flex;
   flex-direction:column;
-  background:#4a525a;
+  background:#495459;
   color:white;
 `;
 
@@ -19,6 +19,10 @@ const Content = styled.div`
   flex:1 1 auto;
   overflow-y:auto;
   padding:1em;
+
+  a, a:visited {
+    color:white;
+  }
 `;
 
 const Footer = styled.footer`
@@ -45,7 +49,7 @@ const Layout = ({ children }) => (
           {children}
         </Content>
         <Footer>
-          © Matthew Del Signore 2018, Built with <a href="www.gatsbyjs.org">Gatsby</a>
+          © Matthew Del Signore 2018, Built with <a href="http://www.gatsbyjs.org">Gatsby</a>
         </Footer>
       </Container>
     )}

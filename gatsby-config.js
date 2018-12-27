@@ -16,13 +16,34 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `posts`,
+        path: `${__dirname}/posts`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `src`,
         path: `${__dirname}/src/`, 
       },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-transformer-remark`,
+    // handle markdown to html conversion
+    {
+      resolve: `gatsby-transformer-remark`,
+      options:{
+        plugins: [
+          //handle images in markdown
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 590,
+            },
+          }
+        ]
+      }
+    },
     `gatsby-plugin-styled-components`,
     {
       resolve:`gatsby-plugin-typography`,
