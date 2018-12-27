@@ -30,9 +30,23 @@ const PostCard = styled.div`
 const CardContainer = styled.div`
   display:flex;
   flex-direction:column;
-  margin-right:15vw;
-  margin-left:15vw;
+
+  @media (min-width: 1100px) {
+    margin-right:15vw;
+    margin-left:15vw;
+  }
+
+  @media (min-width: 800px) and (max-width: 1100px) {
+    margin-right:15vw;
+    margin-left:15vw;
+  }
+
+  @media (min-width: 200px) and (max-width: 400px) {
+    margin-right: 5vw;
+    margin-left: 5vw;
+  }
 `; 
+
 
 const DateText = styled.div`
   font-weight:lighter;

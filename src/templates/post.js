@@ -5,9 +5,17 @@ import Layout from '../components/layout';
 
 
 const PostContainer = styled.div`
-  margin-right: 25vw;
-  margin-left: 25vw;
   padding:1em;
+
+  @media (min-width: 800px) {
+    margin-right:15vw;
+    margin-left:15vw;
+  }
+
+  @media (min-width: 200px) and (max-width: 400px) {
+    margin-right: 5vw;
+    margin-left: 5vw;
+  }
 `;
 
 const PostDate = styled.h3`
