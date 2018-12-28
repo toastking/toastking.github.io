@@ -2,10 +2,12 @@ import React from 'react';
 import { Link,graphql } from 'gatsby';
 
 import Layout from '../components/layout';
-import Image from '../components/image';
 import SEO from '../components/seo';
 
 import styled from 'styled-components';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
 // Container for each post excerpt
 const PostCard = styled.div`
@@ -59,6 +61,10 @@ const ReadMore = styled.p`
   font-weight:300;
 `;
 
+/**
+ * Card to display blog posts
+ * @param {*} props 
+ */
 const FrontPagePost = (props)=>{
   let node = props.item;
   return(
@@ -71,9 +77,80 @@ const FrontPagePost = (props)=>{
   );
 }
 
+const AccountDiv = styled.div`
+  background:rgba(24, 24, 24);
+  padding:1em;
+  margin-top:1em;
+  border-radius:0.25em;
+  color:white;
+
+  /* desktop */
+  @media (min-width: 701px){ 
+    flex-direction:row;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  /* mobile devices and small screens */
+  @media (max-width: 700px){ 
+    display:none;
+  }
+`;
+
+const AccountButton = styled.p`
+  border:none;
+  background:transparent;
+  font-size:5em;
+  margin:0.25em;
+  cursor:pointer;
+  text-align:center;
+
+  :hover {
+    color:#cccccc;
+  }
+
+  a {
+    text-decoration:none;
+  }
+`;
+
+const AccountLabel = styled.p`
+  font-size:0.25em;
+  font-weight:lighter;
+`;
+
+/**
+ * Div with links to my various social media accounts
+ * @param {*} props 
+ */
+const AccountLinks = (props) => (
+  <AccountDiv>
+    <AccountButton>
+      <a href="https://twitter.com/delsig">
+        <FontAwesomeIcon icon={faTwitter} />
+        <AccountLabel>@delsig</AccountLabel>
+      </a>
+    </AccountButton>
+    <AccountButton>
+      <a href="https://github.com/toastking">
+        <FontAwesomeIcon icon={faGithub} />
+        <AccountLabel>@toastking</AccountLabel>
+      </a>
+    </AccountButton>
+    <AccountButton>
+      <a href="https://www.linkedin.com/in/mattdelsig/">
+        <FontAwesomeIcon icon={faLinkedin} />
+        <AccountLabel>LinkedIn</AccountLabel>
+      </a>
+    </AccountButton>
+  </AccountDiv>
+);
+
 const IndexPage = ({data}) => (
   <Layout>
     <SEO title="Matthew Del Signore" keywords={[`coder`, `portfolio`, `frontend`, `react`, `gatsby`]} />
+    <AccountLinks/>
     <CardContainer>
       {data.allMarkdownRemark.edges.map(({node})=>(
         <FrontPagePost item={node} key={node.id}/>
