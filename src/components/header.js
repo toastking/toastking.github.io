@@ -70,6 +70,7 @@ const MenuDiv = styled.div`
   color:white;
   font-size:1.25em;
   opacity:1;
+  text-align:center;
 
   /* desktop */
   @media (min-width: 701px){ 
@@ -91,7 +92,6 @@ const MenuDiv = styled.div`
 
 const MenuText = styled.p`
   margin: auto .25em auto .25em;
-  text-align:center;
 `;
 
 const MenuItem = (props)=>(
