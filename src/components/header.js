@@ -165,7 +165,7 @@ class Menu extends React.Component{
         <MenuDiv show={this.state.showMenu}>
           <MenuItem url="/about" text="About" />
           <MenuItem url="/projects/projects" text="Projects" />
-          <MenuText><a href="Matthew-Del-Signore-Resume.pdf">Resume</a></MenuText>
+          <MenuText><a href="/Matthew-Del-Signore-Resume.pdf">Resume</a></MenuText>
         </MenuDiv>
       </HeaderContainer>
     );
