@@ -10,7 +10,7 @@ const HeaderContainer = styled.div`
   display:flex;
   width:100vw;
   padding:.25em;
-  background:rgba(24, 24, 24);
+  background:rgb(24, 24, 24);
   color:white;
 
   /* Override the font */
