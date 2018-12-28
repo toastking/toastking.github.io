@@ -12,7 +12,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   // log markdown pages that are created
   // and create slugs so we can make the pages
   if (node.internal.type === `MarkdownRemark`) {
-    const slug = createFilePath({ node, getNode });
+    const slug = createFilePath({ node, getNode, basePath:`posts` });
     createNodeField({
       node,
       name: `slug`,
