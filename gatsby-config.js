@@ -65,6 +65,7 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/logo.png`, // This path is relative to the root of the site.
+        legacy:true, //handle apple-touch icon
       },
     },
     'gatsby-plugin-offline',

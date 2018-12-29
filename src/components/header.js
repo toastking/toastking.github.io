@@ -87,6 +87,10 @@ const MenuDiv = styled.div`
       margin-top:.5em;
       margin-bottom:auto;
       display:${props => ((props.show) ? 'flex' : 'none')};
+
+      p {
+        padding:0.35em;
+      }
   }
 `;
 
