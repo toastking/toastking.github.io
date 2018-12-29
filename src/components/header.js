@@ -127,7 +127,7 @@ const MenuButtonDiv = styled.div`
 // Menu Button to show hamburger menu when it's a mobile device 
 const MenuButton = (props) => (
   <MenuButtonDiv>
-    <button class="MenuButton" onClick={props.onToggleMenu}>
+    <button className="MenuButton" onClick={props.onToggleMenu}>
       <FontAwesomeIcon icon={(props.showMenu) ? faCaretUp : faBars }/>
     </button>
   </MenuButtonDiv>

@@ -15,7 +15,8 @@ const Container = styled.div`
 
 const Content = styled.div`
   flex:1 1 auto;
-  overflow-y:auto;
+  overflow-y:scroll;
+  -webkit-overflow-scrolling: touch;
   padding:1em;
   /* padding to take the header into account */
   padding-top:4em;
