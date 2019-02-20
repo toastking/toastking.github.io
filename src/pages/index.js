@@ -98,16 +98,17 @@ const AccountDiv = styled.div`
   }
 `;
 
-const AccountButton = styled.p`
+const AccountButton = styled.div`
   border:none;
+  border-radius:.1em;
   background:transparent;
   font-size:5em;
-  margin:0.25em;
+  padding:.5em;
   cursor:pointer;
   text-align:center;
 
   :hover {
-    color:#cccccc;
+    background:#4f4f4f;
   }
 
   a {
