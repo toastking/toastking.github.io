@@ -2,17 +2,18 @@
 Override the browser body css so we won't show scrollbars
 */
 body {
-    overflow: hidden;
+  overflow-x: hidden;
+  overflow-y:scroll;
+}
+
+
+::-webkit-scrollbar{
+  background:#495459;
 }
 
 /*
 fix scrollbars
 */
-::-webkit-scrollbar {
-    width: 0px;
-    background: transparent; /* make scrollbar transparent */
-}
-
 html {
-   scrollbar-width: none;
+  overflow:hidden !important;
 }
