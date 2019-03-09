@@ -12,3 +12,5 @@ require("prismjs/themes/prism-tomorrow.css");
 //import webfonts css
 require('typeface-roboto');
 require('typeface-roboto-mono');
+//include styles
+require('./src/styles/main.css');

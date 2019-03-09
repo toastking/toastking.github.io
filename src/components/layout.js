@@ -11,16 +11,15 @@ const Container = styled.div`
   display:flex;
   flex-direction:column;
   background:#495459;
+  overflow:none;
+  overflow-y:scroll;
+  -webkit-overflow-scrolling: touch;
 `;
 
 const Content = styled.div`
-  flex:1 1 auto;
-  overflow-y:scroll;
-  -webkit-overflow-scrolling: touch;
   padding:1em;
   /* padding to take the header into account */
   padding-top:4em;
-
   a, a:visited {
     color:white;
   }
@@ -30,6 +29,10 @@ const Footer = styled.footer`
   font-weight:light;
   font-size:0.75em;
   text-align:center;
+  position:absolute;
+  bottom:0;
+  width:100vw;
+  background:#495459;
 `;
 
 const Layout = ({ children }) => (

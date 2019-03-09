@@ -8,7 +8,7 @@ import { faBars, faCaretUp } from '@fortawesome/free-solid-svg-icons'
 //make divs to style stuff
 const HeaderContainer = styled.div`
   display:flex;
-  width:100vw;
+  width:100%;
   padding:.25em;
   background:rgb(24, 24, 24);
   color:white;
