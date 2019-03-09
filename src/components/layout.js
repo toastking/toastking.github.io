@@ -52,9 +52,6 @@ const Layout = ({ children }) => (
         <Content>
           {children}
         </Content>
-        <Footer>
-          © Matthew Del Signore 2018, Built with <a href="http://www.gatsbyjs.org">Gatsby</a>
-        </Footer>
       </Container>
     )}
   />
