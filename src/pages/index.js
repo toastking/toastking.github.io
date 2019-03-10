@@ -78,7 +78,7 @@ const FrontPagePost = (props)=>{
 }
 
 const AccountDiv = styled.div`
-  background:rgba(24, 24, 24);
+  background:rgb(24, 24, 24);
   padding:1em;
   margin-top:1em;
   border-radius:0.25em;

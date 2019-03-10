@@ -1,9 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab');
 /*
 Override the browser body css so we won't show scrollbars
 */
 body {
-  overflow-x: hidden;
-  overflow-y:scroll;
+  overflow: hidden;
 }
 
 

@@ -20,9 +20,11 @@ const HeaderContainer = styled.div`
 
   /* Make it above all the other content
   and make it partially transparent */
-  position:absolute;
+  position:fixed;
+  top:0;
+  left:0;
   opacity:0.8;
-  z-index: 999;
+  z-index: 2;
 
   a {
     text-decoration:none;
