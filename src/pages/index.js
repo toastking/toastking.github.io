@@ -78,7 +78,7 @@ const FrontPagePost = (props)=>{
 }
 
 const AccountDiv = styled.div`
-  background:rgba(24, 24, 24);
+  background:rgb(24, 24, 24);
   padding:1em;
   margin-top:1em;
   border-radius:0.25em;
@@ -98,16 +98,17 @@ const AccountDiv = styled.div`
   }
 `;
 
-const AccountButton = styled.p`
+const AccountButton = styled.div`
   border:none;
+  border-radius:.1em;
   background:transparent;
   font-size:5em;
-  margin:0.25em;
+  padding:.5em;
   cursor:pointer;
   text-align:center;
 
   :hover {
-    color:#cccccc;
+    background:#4f4f4f;
   }
 
   a {

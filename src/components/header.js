@@ -8,7 +8,7 @@ import { faBars, faCaretUp } from '@fortawesome/free-solid-svg-icons'
 //make divs to style stuff
 const HeaderContainer = styled.div`
   display:flex;
-  width:100vw;
+  width:100%;
   padding:.25em;
   background:rgb(24, 24, 24);
   color:white;
@@ -20,9 +20,11 @@ const HeaderContainer = styled.div`
 
   /* Make it above all the other content
   and make it partially transparent */
-  position:absolute;
+  position:fixed;
+  top:0;
+  left:0;
   opacity:0.8;
-  z-index: 999;
+  z-index: 2;
 
   a {
     text-decoration:none;
@@ -169,7 +171,7 @@ class Menu extends React.Component{
         <MenuDiv show={this.state.showMenu}>
           <MenuItem url="/about" text="About" />
           <MenuItem url="/projects/projects" text="Projects" />
-          <MenuText><a href="/Matthew-Del-Signore-Resume.pdf">Resume</a></MenuText>
+          <MenuText><a href="/Matthew-Del-Signore-Resume.pdf">CV</a></MenuText>
         </MenuDiv>
       </HeaderContainer>
     );
