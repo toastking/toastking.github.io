@@ -34,26 +34,26 @@ module.exports = {
     // handle markdown to html conversion
     {
       resolve: `gatsby-transformer-remark`,
-      options:{
+      options: {
         plugins: [
           //handle images in markdown
           {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 590,
-              linkImagesToOriginal:false
+              linkImagesToOriginal: false,
             },
           },
           `gatsby-remark-prismjs`,
-        ]
-      }
+        ],
+      },
     },
     `gatsby-plugin-styled-components`,
     {
-      resolve:`gatsby-plugin-typography`,
-      options:{
-        pathToConfigModule:`src/utils/typography`
-      }
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -65,9 +65,18 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/logo.png`, // This path is relative to the root of the site.
-        legacy:true, //handle apple-touch icon
+        legacy: true, //handle apple-touch icon
       },
     },
     'gatsby-plugin-offline',
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        // The property ID; the tracking code won't be generated without it
+        trackingId: 'G-0WX4JB0GZ6',
+        anonymize: true,
+        respectDNT: true,
+      },
+    },
   ],
 }
